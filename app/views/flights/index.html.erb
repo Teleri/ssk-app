@@ -1,0 +1,21 @@
+<div class="cover">
+  <div class="text">
+    <h1 class="center" style="color:white"><strong>Find Your Next Destination</strong></h1>
+    <h2 class="center" style="color:white"><strong>with SSK</strong></h1>
+  </div>
+</div>
+<h2 class="sub-title">Where's your next destination?</h2>
+<div class="container">
+  <div class="travel">
+    <% @flights.each do |flight| %>
+      <%= link_to flight_path(flight) do %>
+        <div class="planet">
+         <%= cl_image_tag flight.photo.key, height: 350, width: 750, radius: 7 %>
+            <span>
+              <h3><%= flight.destination %></h3>
+            </span>
+        </div>
+      <% end  %>
+    <% end %>
+  </div>
+</div>
